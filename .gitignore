@@ -10,3 +10,5 @@ backend/.venv/
 
 # Dart tool files
 **/.dart_tool/
+
+**/package-lock.json
