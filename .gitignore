@@ -1,0 +1,12 @@
+# Python virtual environments
+backend/.venv/
+
+# Node.js modules
+**/node_modules/
+
+# Flutter plugins and dependencies
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# Dart tool files
+**/.dart_tool/
