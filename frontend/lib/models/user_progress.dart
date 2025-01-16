@@ -1,4 +1,3 @@
-// lib/models/user_progress.dart
 class UserProgress {
   final int userId;
   final int lessonId;
@@ -6,7 +5,6 @@ class UserProgress {
 
   UserProgress({required this.userId, required this.lessonId, required this.progress});
 
-  // Converts a Map to a UserProgress instance
   factory UserProgress.fromMap(Map<String, dynamic> map) {
     return UserProgress(
       userId: map['userId'],
@@ -15,7 +13,6 @@ class UserProgress {
     );
   }
 
-  // Converts a UserProgress instance to a Map
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,

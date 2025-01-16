@@ -1,53 +1,23 @@
-// // lib/screens/ai_screen.dart
-// import 'package:flutter/material.dart';
-// import '../ai/tensorflow_model.dart';
-
-// class AIScreen extends StatefulWidget {
-//   const AIScreen({super.key});
-
-//   @override
-//   _AIScreenState createState() => _AIScreenState();
-// }
-
-// class _AIScreenState extends State<AIScreen> {
-//   String result = 'Loading...';
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _predict();
-//   }
-
-//   Future<void> _predict() async {
-//     await TensorFlowModel.loadModel();
-//     var prediction = await TensorFlowModel.predict([1.0, 2.0, 3.0]);  // Sample input
-//     setState(() {
-//       result = prediction.toString();
-//     });
-//   }
-
-//   @override
-//   void dispose() {
-//     TensorFlowModel.close();
-//     super.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('AI Screen')),
-//       body: Center(child: Text('Prediction Result: $result')),
-//     );
-//   }
-// }
-
-
-
-
-
-
 import 'package:flutter/material.dart';
-import 'package:your_app/ai/tensorflow_model.dart';
+// import 'package:ai_learning_app/ai/tensorflow_model.dart';
+
+class TensorflowModel {
+  Future<void> initializeModel() async {
+    // Simulated model initialization
+    print("TensorFlow model initialized.");
+  }
+
+  List<double> predict(List<double> input) {
+    // Simulated prediction
+    return input.map((x) => x * 2).toList();
+  }
+
+  void dispose() {
+    // Dispose of resources if needed
+    print("TensorFlow model disposed.");
+  }
+}
+
 
 class AiScreen extends StatefulWidget {
   const AiScreen({super.key});
