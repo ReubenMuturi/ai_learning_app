@@ -9,11 +9,12 @@ class DataSyncRepository {
     var database = await _databaseHelper.database;
     var progressData = await database.query('user_progress');
     
-    // Get the connectivity result (it could be a list, but we're interested in individual results)
-    ConnectivityResult connectivityResult = await _connectivityService.checkConnectivity();
+    // Updated connectivity check logic
+    List<ConnectivityResult> connectivityResults = await _connectivityService.checkConnectivity();
 
-    // Check if there's a connection (either WiFi or mobile)
-    bool isConnected = connectivityResult == ConnectivityResult.wifi || connectivityResult == ConnectivityResult.mobile;
+    // Check if there's a connection (WiFi or mobile)
+    bool isConnected = connectivityResults.contains(ConnectivityResult.wifi) ||
+                       connectivityResults.contains(ConnectivityResult.mobile);
 
     if (isConnected) {
       // Sync data to the server with the fetched progressData.
@@ -30,8 +31,3 @@ class DataSyncRepository {
     // await http.post('your_server_endpoint', body: data);
   }
 }
-
-
-
-
-
