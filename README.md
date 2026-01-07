@@ -1,4 +1,4 @@
-# ai_learning_app
+# mobile_ai_learning_app
 
 A new Flutter project.
 
